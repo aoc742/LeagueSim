@@ -22,6 +22,7 @@ namespace LeagueSim.Model
         private double _resourceRegen;
         private int _lethality;
         private int _magicPen;
+        private bool _canChange;
         #endregion
 
         #region Properties
