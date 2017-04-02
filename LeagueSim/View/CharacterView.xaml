@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="LeagueSim.View.CharacterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeagueSim.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <GroupBox Header="Character Stats">
+        <Grid>
+            <Grid.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="TextBlock.Margin" Value="1" />
+                </Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="TextBlock.Margin" Value="1" />
+                </Style>
+            </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="10">
+                <TextBlock Text="Attack Damage" Width="Auto" Height="Auto" />
+                <TextBox Text="{Binding AttackDamage}" Width="Auto" Height="Auto" />
+
+                <TextBlock Text="Armor" Width="Auto" Height="Auto" />
+                <TextBox Text="{Binding Armor}" Width="Auto" Height="Auto" />
+
+                <TextBlock Text="Attack Speed" Width="Auto" Height="Auto" />
+                <TextBox Text="{Binding AttackSpeed}" Width="Auto" Height="Auto" />
+
+                <TextBlock Text="Critical" Width="Auto" Height="Auto" />
+                <TextBox Text="{Binding Critical}" Width="Auto" Height="Auto" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock Text="Ability Power" Width="Auto" Height="Auto" />
+                <TextBox Text="{Binding AbilityPower}" Width="Auto" Height="Auto" />
+
+                <TextBlock Text="Magic Resist" Width="Auto" Height="Auto" />
+                <TextBox Text="{Binding MagicResist}" Width="Auto" Height="Auto" />
+
+                <TextBlock Text="Cooldown" Width="Auto" Height="Auto" />
+                <TextBox Text="{Binding Cooldown}" Width="Auto" Height="Auto" />
+
+                <TextBlock Text="Movespeed" Width="Auto" Height="Auto" />
+                <TextBox Text="{Binding Movespeed}" Width="Auto" Height="Auto" />
+            </StackPanel>
+        </Grid>
+    </GroupBox>
+</UserControl>
