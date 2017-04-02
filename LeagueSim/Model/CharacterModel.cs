@@ -259,6 +259,54 @@ namespace LeagueSim.Model
                 OnPropertyChanged(nameof(this.Movespeed));
             }
         }
+        public double HealthRegen
+        {
+            get
+            {
+                return this._healthRegen;
+            }
+            set
+            {
+                this._healthRegen = value;
+                OnPropertyChanged(nameof(this.HealthRegen));
+            }
+        }
+        public double ResourceRegen
+        {
+            get
+            {
+                return this._resourceRegen;
+            }
+            set
+            {
+                this._resourceRegen = value;
+                OnPropertyChanged(nameof(this.ResourceRegen));
+            }
+        }
+        public int Lethality
+        {
+            get
+            {
+                return this._lethality;
+            }
+            set
+            {
+                this._lethality = value;
+                OnPropertyChanged(nameof(this.Lethality));
+            }
+        }
+        public int MagicPen
+        {
+            get
+            {
+                return this._magicPen;
+            }
+            set
+            {
+                this._magicPen = value;
+                OnPropertyChanged(nameof(this.MagicPen));
+            }
+        }
         #endregion
 
         public CharacterModel()
