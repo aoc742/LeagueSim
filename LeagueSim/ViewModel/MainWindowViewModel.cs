@@ -10,5 +10,7 @@ namespace LeagueSim.ViewModel
     {
         public CharacterViewModel CharacterViewModel { get; set; } = new CharacterViewModel();
 
+        public VisualViewModel VisualList { get; set; } = new VisualViewModel();
+
     }
 }

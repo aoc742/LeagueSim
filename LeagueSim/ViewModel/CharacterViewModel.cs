@@ -25,12 +25,12 @@ namespace LeagueSim.ViewModel
             }
         }
 
-        private DelegateCommand _buttonCommand;
-        public DelegateCommand ButtonCommand
+        private DelegateCommand _q;
+        public DelegateCommand Q
         {
             get
             {
-                return _buttonCommand ?? (_buttonCommand = new DelegateCommand(ButtonMethod));
+                return _q ?? (_q = new DelegateCommand(QMethod));
             }
         }
 
@@ -39,9 +39,9 @@ namespace LeagueSim.ViewModel
             Title = "HELLO";
         }
 
-        public void ButtonMethod(object obj)
+        public void QMethod(object obj)
         {
-            MessageBox.Show("Testing Button click");
+            MessageBox.Show("Q clicked");
         }
 
     }

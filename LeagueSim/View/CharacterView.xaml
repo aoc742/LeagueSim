@@ -21,30 +21,24 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Margin="10">
-                <TextBlock Text="Attack Damage" Width="Auto" Height="Auto" />
-                <TextBox Text="{Binding AttackDamage}" Width="Auto" Height="Auto" />
+                <TextBlock Text="Passive" Width="Auto" Height="Auto" ToolTip="{Binding ChampionPassive}" />
+                <TextBlock Text="Q" Width="Auto" Height="Auto" />
+                <Button Content="Q" Width="Auto" Height="Auto" Command="{Binding Q}" />
 
-                <TextBlock Text="Armor" Width="Auto" Height="Auto" />
-                <TextBox Text="{Binding Armor}" Width="Auto" Height="Auto" />
+                <TextBlock Text="W" Width="Auto" Height="Auto" />
+                <Button Content="W" Width="Auto" Height="Auto" Command="{Binding W}" />
+                
+                <TextBlock Text="E" Width="Auto" Height="Auto" />
+                <Button Content="E" Width="Auto" Height="Auto" Command="{Binding E}" />
+                
+                <TextBlock Text="R" Width="Auto" Height="Auto" />
+                <Button Content="R (Ultimate)" Width="Auto" Height="Auto" Command="{Binding R}" />
 
-                <TextBlock Text="Attack Speed" Width="Auto" Height="Auto" />
-                <TextBox Text="{Binding AttackSpeed}" Width="Auto" Height="Auto" />
+                <TextBlock Text="Health" Width="Auto" Height="Auto" />
+                <TextBox Text="{Binding Health}" Width="Auto" Height="Auto" />
 
-                <TextBlock Text="Critical" Width="Auto" Height="Auto" />
-                <TextBox Text="{Binding Critical}" Width="Auto" Height="Auto" />
-            </StackPanel>
-            <StackPanel Grid.Column="1" Margin="10">
-                <TextBlock Text="Ability Power" Width="Auto" Height="Auto" />
-                <TextBox Text="{Binding AbilityPower}" Width="Auto" Height="Auto" />
-
-                <TextBlock Text="Magic Resist" Width="Auto" Height="Auto" />
-                <TextBox Text="{Binding MagicResist}" Width="Auto" Height="Auto" />
-
-                <TextBlock Text="Cooldown" Width="Auto" Height="Auto" />
-                <TextBox Text="{Binding Cooldown}" Width="Auto" Height="Auto" />
-
-                <TextBlock Text="Movespeed" Width="Auto" Height="Auto" />
-                <TextBox Text="{Binding Movespeed}" Width="Auto" Height="Auto" />
+                <TextBlock Text="Mana" Width="Auto" Height="Auto" />
+                <TextBox Text="{Binding Mana}" Width="Auto" Height="Auto" />
             </StackPanel>
         </Grid>
     </GroupBox>

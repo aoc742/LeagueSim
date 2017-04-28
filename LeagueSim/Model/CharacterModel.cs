@@ -283,30 +283,6 @@ namespace LeagueSim.Model
                 OnPropertyChanged(nameof(this.ResourceRegen));
             }
         }
-        public int Lethality
-        {
-            get
-            {
-                return this._lethality;
-            }
-            set
-            {
-                this._lethality = value;
-                OnPropertyChanged(nameof(this.Lethality));
-            }
-        }
-        public int MagicPen
-        {
-            get
-            {
-                return this._magicPen;
-            }
-            set
-            {
-                this._magicPen = value;
-                OnPropertyChanged(nameof(this.MagicPen));
-            }
-        }
         #endregion
 
         public CharacterModel()
