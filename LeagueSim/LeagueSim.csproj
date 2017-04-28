@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="API\KeyRateLimit.cs" />
     <Compile Include="Command\DelegateCommand.cs" />
     <Compile Include="Model\CharacterModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />

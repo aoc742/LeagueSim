@@ -7,39 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <GroupBox Header="Character Stats">
-        <Grid>
-            <Grid.Resources>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="TextBlock.Margin" Value="1" />
-                </Style>
-                <Style TargetType="{x:Type TextBox}">
-                    <Setter Property="TextBlock.Margin" Value="1" />
-                </Style>
-            </Grid.Resources>
-                <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Margin="10">
-                <TextBlock Text="Passive" Width="Auto" Height="Auto" ToolTip="{Binding ChampionPassive}" />
-                <TextBlock Text="Q" Width="Auto" Height="Auto" />
-                <Button Content="Q" Width="Auto" Height="Auto" Command="{Binding Q}" />
+        <UniformGrid Columns="2">
 
-                <TextBlock Text="W" Width="Auto" Height="Auto" />
-                <Button Content="W" Width="Auto" Height="Auto" Command="{Binding W}" />
-                
-                <TextBlock Text="E" Width="Auto" Height="Auto" />
-                <Button Content="E" Width="Auto" Height="Auto" Command="{Binding E}" />
-                
-                <TextBlock Text="R" Width="Auto" Height="Auto" />
-                <Button Content="R (Ultimate)" Width="Auto" Height="Auto" Command="{Binding R}" />
+            <ComboBox x:Name="RegionComboBox" Margin="10,0,10,0"
+                      Height="25"
+                      ItemsSource="{Binding Regions}"
+                      SelectedValue="{Binding SelectedRegion}" />
+            <Label />
 
-                <TextBlock Text="Health" Width="Auto" Height="Auto" />
-                <TextBox Text="{Binding Health}" Width="Auto" Height="Auto" />
+            <TextBlock Text="Summoner Name" />
+            
+            <TextBox x:Name="SummonerNameText"
+                     Margin="10,0,10,0"
+                     Height="25"
+                     Text="{Binding SummonerName}" />
+            
+            <Button Content="Update" Command="{Binding SearchSummonerName}" />
 
-                <TextBlock Text="Mana" Width="Auto" Height="Auto" />
-                <TextBox Text="{Binding Mana}" Width="Auto" Height="Auto" />
-            </StackPanel>
-        </Grid>
+            <Label />
+
+        </UniformGrid>
     </GroupBox>
 </UserControl>
