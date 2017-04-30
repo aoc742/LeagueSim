@@ -18,7 +18,7 @@
             <ColumnDefinition Width="5" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <local:CharacterView Grid.Column="0" DataContext="{Binding CharacterViewModel}" />
+        <local:SummonerView Grid.Column="0" DataContext="{Binding CharacterViewModel}" />
         <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <local:VisualView Grid.Column="2" DataContext="{Binding VisualViewModel}" />
         

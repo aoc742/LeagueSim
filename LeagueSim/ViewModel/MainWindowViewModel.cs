@@ -8,7 +8,7 @@ namespace LeagueSim.ViewModel
 {
     class MainWindowViewModel : BaseViewModel
     {
-        public CharacterViewModel CharacterViewModel { get; set; } = new CharacterViewModel();
+        public SummonerViewModel CharacterViewModel { get; set; } = new SummonerViewModel();
 
         public VisualViewModel VisualList { get; set; } = new VisualViewModel();
 

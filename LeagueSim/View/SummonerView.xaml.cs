@@ -18,9 +18,9 @@ namespace LeagueSim.View
     /// <summary>
     /// Interaction logic for CharacterView.xaml
     /// </summary>
-    public partial class CharacterView : UserControl
+    public partial class SummonerView : UserControl
     {
-        public CharacterView()
+        public SummonerView()
         {
             InitializeComponent();
         }

@@ -147,7 +147,7 @@ namespace LeagueSim.Model
         Zyra
     }
 
-    class CharacterModel : BaseViewModel
+    class SummonerModel : BaseViewModel
     {
         private int _attackDamage;
 
@@ -167,7 +167,7 @@ namespace LeagueSim.Model
         
         #endregion
 
-        public CharacterModel()
+        public SummonerModel()
         {
 
         }

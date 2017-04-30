@@ -10,7 +10,7 @@ using LeagueSim.Command;
 
 namespace LeagueSim.ViewModel
 {
-    public class CharacterViewModel : BaseViewModel
+    public class SummonerViewModel : BaseViewModel
     {
         public ObservableCollection<string> Regions { get; set; } = new ObservableCollection<string>()
         {
@@ -61,6 +61,20 @@ namespace LeagueSim.ViewModel
             }
         }
 
+        private int _requestAmount = API.KeyRateLimit.requestsRemaining;
+        public int RequestAmount
+        {
+            get
+            {
+                return this._requestAmount;
+            }
+            set
+            {
+                this._requestAmount = value;
+                OnPropertyChanged(nameof(this.RequestAmount));
+            }
+        }
+
         private DelegateCommand _searchSummonerName;
         public DelegateCommand SearchSummonerName
         {
@@ -70,13 +84,14 @@ namespace LeagueSim.ViewModel
             }
         }
 
-        public CharacterViewModel()
+        public SummonerViewModel()
         {
         }
 
         public void SearchSummonerNameCommand(object obj)
         {
-            MessageBox.Show("Command");
+            API.KeyRateLimit.Request();
+            RequestAmount = API.KeyRateLimit.requestsRemaining;
         }
 
     }

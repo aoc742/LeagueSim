@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="LeagueSim.View.CharacterView"
+﻿<UserControl x:Class="LeagueSim.View.SummonerView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -24,7 +24,10 @@
             
             <Button Content="Update" Command="{Binding SearchSummonerName}" />
 
-            <Label />
+            <TextBox Margin="10, 0, 10, 0"
+                     Height="25"
+                     Text="{Binding RequestAmount}"
+                     IsReadOnly="True" />
 
         </UniformGrid>
     </GroupBox>
