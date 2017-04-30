@@ -24,7 +24,10 @@
             
             <Button Content="Update" Command="{Binding SearchSummonerName}" />
 
-            <Label />
+            <TextBox Margin="10, 0, 10, 0"
+                     Height="25"
+                     Text="{Binding RequestAmount}"
+                     IsReadOnly="True" />
 
         </UniformGrid>
     </GroupBox>
