@@ -13,11 +13,7 @@ namespace LeagueSim.API
         /// Rate Limit(s):
         /// 10 requests every 10 seconds 
         /// 500 requests every 10 minutes
-        /// Use response headers in each API call. If over limit 
-
         public static int requestsRemaining = 10;
-
-        public static string apiKey = "RGAPI-237b788f-8324-40aa-9bc7-c03111b49caf";
 
         public static void Request()
         {
@@ -33,7 +29,7 @@ namespace LeagueSim.API
             }
         }
 
-        public static async Task updateRequestsRemaining()
+        public static void updateRequestsRemaining()
         {
             // THIS NEEDS TO BE ASYNCHRONOUS
             System.Timers.Timer timer = new System.Timers.Timer(1200);
