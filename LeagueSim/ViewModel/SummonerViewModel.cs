@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.IO;
+using LeagueSim.Model;
 using LeagueSim.Command;
 
 
 namespace LeagueSim.ViewModel
 {
-    public class CharacterViewModel : BaseViewModel
+    public class SummonerViewModel : BaseViewModel
     {
 
         public ObservableCollection<string> Regions { get; set; } = new ObservableCollection<string>()
@@ -32,6 +33,20 @@ namespace LeagueSim.ViewModel
             {
                 this._selectedRegion = value;
                 OnPropertyChanged(nameof(this.SelectedRegion));
+            }
+        }
+
+        private string _testData;
+        public string TestData
+        {
+            get
+            {
+                return this._testData;
+            }
+            set
+            {
+                this._testData = value;
+                OnPropertyChanged(nameof(TestData));
             }
         }
 
@@ -100,7 +115,7 @@ namespace LeagueSim.ViewModel
             }
         }
 
-        public CharacterViewModel()
+        public SummonerViewModel()
         {
         }
 
@@ -112,8 +127,24 @@ namespace LeagueSim.ViewModel
 
         public void SearchSummonerCommand(object obj)
         {
-            Progress = 0;
-            Task<int> x = SearchSummonerNameCommand(obj);
+            var json = new JSON();
+            if (RequestAmount <= -10)
+            {
+                RequestAmount = -100;
+                ChampionComparison test = new ChampionComparison("Aatrox", "Ahri");
+                json.WriteToJsonFile<ChampionComparison>("C:\\Users\\Austin\\Desktop\\test.json", test);
+            }
+            else
+            {
+                ChampionComparison testChamp = json.ReadFromJsonFile<ChampionComparison>("C:\\Users\\Austin\\Desktop\\test.json");
+            }
+
+            
+
+            
+
+            //Progress = 0;
+            //Task<int> x = SearchSummonerNameCommand(obj);
         }
 
         public async Task<int> SearchSummonerNameCommand(object obj)

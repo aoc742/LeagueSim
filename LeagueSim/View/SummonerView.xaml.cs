@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace LeagueSim.View
 {
     /// <summary>
-    /// Interaction logic for CharacterView.xaml
+    /// Interaction logic for SummonerViewModel.xaml
     /// </summary>
     public partial class SummonerView : UserControl
     {
