@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -125,23 +126,26 @@ namespace LeagueSim.ViewModel
             return true;
         }
 
+        public ObservableCollection<ChampionComparison> testList { get; set; } = new ObservableCollection<Model.ChampionComparison>();
+
+        public ObservableCollection<ChampionComparison> newList { get; set; } = new ObservableCollection<ChampionComparison>();
+
         public void SearchSummonerCommand(object obj)
         {
             var json = new JSON();
-            if (RequestAmount <= -10)
+            if (RequestAmount > -10)
             {
                 RequestAmount = -100;
                 ChampionComparison test = new ChampionComparison("Aatrox", "Ahri");
-                json.WriteToJsonFile<ChampionComparison>("C:\\Users\\Austin\\Desktop\\test.json", test);
+                testList.Add(new ChampionComparison("Volibear", "Ahri"));
+                testList.Add(new ChampionComparison("Trundle", "Amumu"));
+                var filePath = AppDomain.CurrentDomain.BaseDirectory + "ChampionComparisons.json";
+                json.WriteToJsonFile<ObservableCollection<ChampionComparison>>(filePath, testList);
             }
             else
             {
-                ChampionComparison testChamp = json.ReadFromJsonFile<ChampionComparison>("C:\\Users\\Austin\\Desktop\\test.json");
+                newList = json.ReadFromJsonFile<ObservableCollection<ChampionComparison>>("C:\\Users\\Austin\\Desktop\\test.json");
             }
-
-            
-
-            
 
             //Progress = 0;
             //Task<int> x = SearchSummonerNameCommand(obj);

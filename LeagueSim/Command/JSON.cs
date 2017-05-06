@@ -12,25 +12,6 @@ namespace LeagueSim.Command
 {
     public class JSON
     {
-
-        public void JSONSerialize(ChampionComparison obj)
-        {
-            MemoryStream stream = new MemoryStream();
-            DataContractJsonSerializer jsonSer = new DataContractJsonSerializer(typeof(ChampionComparison));
-            jsonSer.WriteObject(stream, obj);
-            stream.Position = 0;
-            StreamReader sr = new StreamReader(stream);
-            string x = sr.ReadToEnd();
-        }
-
-        public string JSONDeserialize(string JSONData)
-        {
-            DataContractJsonSerializer jsonSer = new DataContractJsonSerializer(typeof(ChampionComparison));
-            MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(JSONData));
-            ChampionComparison obj = (ChampionComparison)jsonSer.ReadObject(stream);
-            return string.Format("First = {0}, Second = {1}, Wins: {2}, Losses: {3}, AllyWins: {4}, AllyLosses: {5}", obj.FirstChampion, obj.SecondChampion, obj.Wins, obj.Losses, obj.AllyWins, obj.AllyLosses);
-        }
-
         public void WriteToJsonFile<T>(string filePath, T objectToWrite, bool append = false) where T: new()
         {
             TextWriter writer = null;
