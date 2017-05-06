@@ -64,6 +64,7 @@
     <Compile Include="Command\DelegateCommand.cs" />
     <Compile Include="Command\JSON.cs" />
     <Compile Include="Model\ChampionComparison.cs" />
+    <Compile Include="Model\ChampionModel.cs" />
     <Compile Include="Model\SummonerModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\SummonerViewModel.cs" />

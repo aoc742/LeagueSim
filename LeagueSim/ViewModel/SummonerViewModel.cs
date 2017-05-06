@@ -151,6 +151,19 @@ namespace LeagueSim.ViewModel
             //Task<int> x = SearchSummonerNameCommand(obj);
         }
 
+        public async Task<int> ConstructJsonConfiguration(object obj)
+        {
+            string filePath = AppDomain.CurrentDomain.BaseDirectory + "ChampionComparisons.json";
+            ObservableCollection<ChampionComparison> ChampionComparisons = new ObservableCollection<ChampionComparison>();
+
+            foreach (LeagueSim.Model.Champions champ1 in Enum.GetValues(typeof(LeagueSim.Model.Champions)))
+            {
+                ChampionComparisons.Add(new ChampionComparison(champ1.ToString(), champ1.ToString()));
+            }
+
+            return 0;
+        }
+
         public async Task<int> SearchSummonerNameCommand(object obj)
         {
             string filePath = "c:\\Users\\Austin\\Desktop\\testFile.txt";
@@ -162,19 +175,23 @@ namespace LeagueSim.ViewModel
             
             foreach (LeagueSim.Model.Champions champ1 in Enum.GetValues(typeof(LeagueSim.Model.Champions)))
             {
-                foreach (LeagueSim.Model.Champions champ2 in Enum.GetValues(typeof(LeagueSim.Model.Champions)))
+                int textWriteCount = await Task.Run<int>(() =>
                 {
-                    if (string.Compare(champ1.ToString(), champ2.ToString()) == -1)
-                    {
-                        int textWriteCount = await Task.Run<int>(() =>
-                        {
-                            File.AppendAllText(filePath, "new ChampionComparison( " + champ1 + ", " + champ2 + ");" + Environment.NewLine);
-                            Progress = (count + 1)*100/9180;
-                            return tempCount;
-                        });
-                        count++;
-                    }
-                }
+                    File.AppendAllText(filePath, "[DataMember]\npublic string" + )
+                })
+                //foreach (LeagueSim.Model.Champions champ2 in Enum.GetValues(typeof(LeagueSim.Model.Champions)))
+                //{
+                //    if (string.Compare(champ1.ToString(), champ2.ToString()) == -1)
+                //    {
+                //        int textWriteCount = await Task.Run<int>(() =>
+                //        {
+                //            File.AppendAllText(filePath, "new ChampionComparison( " + champ1 + ", " + champ2 + ");" + Environment.NewLine);
+                //            Progress = (count + 1)*100/9180;
+                //            return tempCount;
+                //        });
+                //        count++;
+                //    }
+                //}
             }
             File.AppendAllText(filePath, "Total objects: " + count);
 

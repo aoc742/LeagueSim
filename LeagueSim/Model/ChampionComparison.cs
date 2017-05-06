@@ -28,17 +28,13 @@ namespace LeagueSim.Model
 
         }
 
-        public ChampionComparison(string firstChampion, string secondChampion)
+        public ChampionComparison(string firstChampion, string secondChampion, bool didFirstChampionWin, bool isSecondChampAlly = false)
         {
             FirstChampion = firstChampion;
             SecondChampion = secondChampion;
             Wins = Losses = AllyWins = AllyLosses = 0;
 
-            // Create a JSON file that includes list of ChampionComparison objects
-            // Ex { AatroxAhri { [Wins: 15, Losses: 17, AllyWins: 11, AllyLosses: 13] }
-            // Where Wins = Aatrox Wins against Ahri, AllyWins = Aatrox Wins with Ahri
-            //
-            // This 
+            var Champion = 
         }
     }
 }
